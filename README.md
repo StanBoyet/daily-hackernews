@@ -7,7 +7,7 @@ Get the top Hacker News stories from yesterday delivered to your inbox every mor
 1. Fetches yesterday's top 30 stories from the [Algolia HN Search API](https://hn.algolia.com/api)
 2. Formats them into a clean HTML email with titles, points, comment links, and authors
 3. Sends the digest via [Resend](https://resend.com)
-4. Runs daily at 8am UTC on GitHub Actions
+4. Runs daily at 8am Brussels time on GitHub Actions
 
 ## Get your own in 5 minutes
 
@@ -37,7 +37,7 @@ Go to your fork's **Settings > Secrets and variables > Actions** and add:
 
 Go to **Actions > Daily HN Digest > Run workflow** to trigger it manually. Check your inbox.
 
-That's it. The workflow runs automatically every day at 8am UTC from now on.
+That's it. The workflow runs automatically every day at 8am Brussels time from now on.
 
 ## Customize
 

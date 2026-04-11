@@ -2,7 +2,7 @@ name: Daily HN Digest
 
 on:
   schedule:
-    - cron: "0 8 * * *"
+    - cron: "0 6 * * *"  # 8am Brussels time (CET/CEST)
   workflow_dispatch:
 
 jobs:
