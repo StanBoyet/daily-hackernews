@@ -1,6 +1,7 @@
 import os
 import sys
 from datetime import date, datetime, timedelta, timezone
+from urllib.parse import urlparse
 
 import requests
 import resend
@@ -33,8 +34,9 @@ def format_email(stories, date_str):
         url = story.get("url") or f"https://news.ycombinator.com/item?id={story['objectID']}"
         points = story.get("points", 0)
         comments = story.get("num_comments", 0)
-        author = story.get("author", "unknown")
         hn_link = f"https://news.ycombinator.com/item?id={story['objectID']}"
+        parsed = urlparse(url)
+        display_url = f"{parsed.netloc}{parsed.path}".rstrip("/")
 
         rows += f"""
         <tr>
@@ -46,7 +48,7 @@ def format_email(stories, date_str):
             <div style="font-size:12px;color:#888;margin-top:4px;">
               {points} points &middot;
               <a href="{hn_link}" style="color:#888;text-decoration:none;">{comments} comments</a> &middot;
-              {author}
+              {display_url}
             </div>
           </td>
         </tr>"""
