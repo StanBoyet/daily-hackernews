@@ -48,7 +48,7 @@ def format_email(stories, date_str):
             <div style="font-size:12px;color:#888;margin-top:4px;">
               {points} points &middot;
               <a href="{hn_link}" style="color:#888;text-decoration:none;">{comments} comments</a> &middot;
-              {display_url}
+              <a href="{url}" style="color:#888;text-decoration:none;">{display_url[:60]}{"…" if len(display_url) > 60 else ""}</a>
             </div>
           </td>
         </tr>"""
